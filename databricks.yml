@@ -1,0 +1,21 @@
+bundle:
+  name: databricks_demo_bundle
+
+include:
+  - jobs/*.yml
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-7405605238595865.5.azuredatabricks.net # filled from your answers
+    presets:
+      source_linked_deployment: false
+
+  prod:
+    mode: production
+    workspace:
+      host: https://adb-7405605238595865.5.azuredatabricks.net
+    #run_as:
+    #  service_principal_name: dbx-demo-wrkspace-dev-sp
