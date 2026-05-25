@@ -5,7 +5,7 @@ resources:
       tasks:
         - task_key: create_customer_table
           notebook_task:
-            notebook_path: /Workspace/Users/dilbertshanil@gmail.com/create_customer
+            notebook_path: ../notebooks/create_customer.py
             base_parameters:
               catalog: dbx_demo_wrkspace_dev
               schema: finance_data_smith
@@ -13,4 +13,3 @@ resources:
       queue:
         enabled: true
       performance_target: PERFORMANCE_OPTIMIZED
-

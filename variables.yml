@@ -1,0 +1,3 @@
+variables:
+  catalog:
+    description: name of the catalog
