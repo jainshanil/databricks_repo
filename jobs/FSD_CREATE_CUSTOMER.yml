@@ -1,0 +1,16 @@
+resources:
+  jobs:
+    FSD_CREATE_CUSTOMER:
+      name: FSD_CREATE_CUSTOMER
+      tasks:
+        - task_key: create_customer_table
+          notebook_task:
+            notebook_path: /Workspace/Users/dilbertshanil@gmail.com/create_customer
+            base_parameters:
+              catalog: dbx_demo_wrkspace_dev
+              schema: finance_data_smith
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
+
