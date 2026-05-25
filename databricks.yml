@@ -11,6 +11,7 @@ targets:
     workspace:
       host: https://adb-7405605238595865.5.azuredatabricks.net # filled from your answers
     presets:
+      name_prefix: ""
       source_linked_deployment: false
 
   prod:
