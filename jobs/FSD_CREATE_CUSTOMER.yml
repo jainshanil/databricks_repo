@@ -5,7 +5,7 @@ resources:
       tasks:
         - task_key: create_customer_table
           notebook_task:
-            notebook_path: ../notebooks/create_customer.py
+            notebook_path: ../notebooks/cust_project/create_customer.py
             base_parameters:
               catalog: dbx_demo_wrkspace_dev
               schema: finance_data_smith
