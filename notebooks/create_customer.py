@@ -11,7 +11,7 @@ spark.sql(f"USE SCHEMA {schema}")
 
 # COMMAND ----------
 
-# MAGIC %run ./run_utils.py
+# MAGIC %run ./run_utils
 
 # COMMAND ----------
 
