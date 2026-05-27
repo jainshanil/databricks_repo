@@ -11,6 +11,10 @@ spark.sql(f"USE SCHEMA {schema}")
 
 # COMMAND ----------
 
+# MAGIC %run ./run_utils.py
+
+# COMMAND ----------
+
 spark.sql(f"""
 create table {catalog}.{schema}.gender_stats
 as 
