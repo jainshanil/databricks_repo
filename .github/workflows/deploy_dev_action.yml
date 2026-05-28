@@ -1,0 +1,39 @@
+name: Deploy_Databricks_Asset_Bundle
+
+on:
+  push:
+    branches:
+      - dev
+    paths-ignore:
+      - "README.md"
+      - "param/**"
+      - "scripts/**"
+
+jobs:
+  deploy:
+    name: Dynamic_DAB_Deployment
+    runs-on: ubuntu-latest
+
+    # Set up global environment variables for Databricks CLI authentication
+    env:
+      DATABRICKS_HOST: ${{ secrets.DATABRICKS_DEV_HOST }}
+      DATABRICKS_CLIENT_ID: ${{ secrets.DATABRICKS_DEV_CLIENT_ID }}
+      DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_DEV_CLIENT_SECRET }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Install the official Databricks CLI on the runner
+      - name: Setup Databricks CLI
+        uses: databricks/setup-cli@v1
+
+      # Validate the bundle configuration for the specific target
+      - name: Validate Asset Bundle
+        run: |
+          databricks bundle validate -t dev
+
+      # Deploy specifically using the determined target variable
+      - name: Deploy Asset Bundle
+        run: |
+          databricks bundle deploy -t dev

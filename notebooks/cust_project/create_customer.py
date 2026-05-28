@@ -19,7 +19,7 @@ spark.sql(f"""
 create table {catalog}.{schema}.gender_stats
 as 
 select country,count_if(upper(gender) = 'FEMALE') as female_count,count_if(upper(gender) = 'MALE') as male_count 
-from samples.bakehouse.sales_customers 
+from samples.bakehouse.sales_customers  
 group by country
 """)
 
