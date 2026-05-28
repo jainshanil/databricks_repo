@@ -22,11 +22,11 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Install the official Databricks CLI on the runner
       - name: Setup Databricks CLI
-        uses: databricks/setup-cli@v1
+        uses: databricks/setup-cli@main
 
       # Validate the bundle configuration for the specific target
       - name: Validate Asset Bundle
