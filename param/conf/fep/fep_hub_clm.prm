@@ -1,0 +1,4 @@
+[flow_views::hub_bgw_clm]
+HQL_FILE=bgw_clm_hub.sql
+
+
