@@ -3,7 +3,7 @@ name: Deploy_Databricks_Asset_Bundle
 on:
   push:
     branches:
-      - dev
+      - develop
     paths-ignore:
       - "README.md"
       - "param/**"
